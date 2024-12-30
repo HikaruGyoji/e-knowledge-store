@@ -26,8 +26,8 @@ export async function POST(request: Request, response: Response) {
         },
       ],
       mode: "payment",
-      success_url: `${process.env.NEXT_PUBLIC_API_URL}/book/checkout-success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${process.env.NEXT_PUBLIC_API_URL}`,
+      success_url: `https://e-knowledge-store.vercel.app/book/checkout-success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `https://e-knowledge-store.vercel.app/`,
     });
     return NextResponse.json({ checkout_url: session.url });
   } catch (err: any) {
